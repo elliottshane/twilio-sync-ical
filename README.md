@@ -11,11 +11,10 @@ Account SID | Your primary Twilio account identifier - find this [in the console
 API Key | Used to authenticate - [Use the IP Messaging dev tools to generate one here](https://www.twilio.com/user/account/ip-messaging/dev-tools/api-keys).
 API Secret | Used to authenticate - [just like the above, you'll get one here](https://www.twilio.com/user/account/ip-messaging/dev-tools/api-keys).
 
-## Temporary: Generating a Service Instance
+## Generating a Service Instance
 
 During the Sync developer preview, you will need to generate Sync service
-instances via API until the Console GUI is available. Using the API key pair you
-generated above, generate a service instance via REST API with this curl command:
+instances via the REST API. This will eventually be replaced with a tool in the Twilio Console.
 
 ```bash
 curl -X POST https://preview.twilio.com/Sync/Services \
@@ -26,8 +25,7 @@ curl -X POST https://preview.twilio.com/Sync/Services \
 ## A Note on API Keys
 
 When you generate an API key pair at the URLs above, your API Secret will only
-be shown once - make sure to save this in a secure location, 
-or possibly your `~/.bash_profile`.
+be shown once - make sure to save this in a secure location, or possibly your `~/.bash_profile`.
 
 ## Setting Up The Node.js Application
 
