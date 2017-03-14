@@ -51,7 +51,7 @@ Now we should be all set! Run the application using the `node` command.
 node .
 ```
 
-Your application should now be running at http://localhost:3000. Open this page
+Your application should now be running at http://localhost:4567. Open this page
 in a couple browsers or tabs, and start syncing!
 
 ## License
