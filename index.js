@@ -20,16 +20,11 @@ parameter.
 app.get('/token', (request, response) => {
   let appName = 'TwilioSyncDemo';
   let identity = randomUsername();
-  let deviceId = request.query.device;
-
-  // Create a unique ID for the client on their current device
-  let endpointId = `${appName}:${identity}:${deviceId}`;
 
   // Create a "grant" which enables a client to use Sync as a given user,
   // on a given device
   let syncGrant = new SyncGrant({
     serviceSid: config.serviceSid,
-    endpointId: endpointId
   });
 
   // Create an access token which we will sign and return to the client,
