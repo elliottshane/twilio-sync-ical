@@ -1,0 +1,38 @@
+//this is the twilio function that when clicked on, selects the appt form the list and presents
+//the ical file. 
+
+const ical = require('ical-generator')
+const twilio = require('twilio')
+
+
+exports.handler = function(context, event, callback) {
+
+     Runtime.getSync('')
+     .syncLists('SyncApptList')
+     .syncListItems
+     .each(syncListItems => {
+       if (syncListItems.data.hasOwnProperty(event.id)){
+           var dt = new Date(syncListItems.data[event.id].DateTime)
+           var edt =  new Date(syncListItems.data[event.id].DateTime)
+           edt.setMinutes(dt.getMinutes()+30);
+           var cal = ical({prodId: '//elliottcg.com//twilio-ical-generator//EN'});
+           cal.createEvent({
+                 start: dt ,
+                 end: edt,
+                 summary: syncListItems.data[event.id].clinicName ,
+                 description: 'VA Appt:' +syncListItems.data[event.id].clinicName ,
+                 location: 'VA'         
+            });
+    
+            const response = new Twilio.Response();
+            response.setStatusCode(200);
+            response.appendHeader('Content-Type', 'text/calendar; charset=utf-8');
+            response.appendHeader('Content-Disposition', 'attachment; filename="new.ics"');
+            response.setBody(cal.toString());
+        //    callback(null, response);
+        //instead of prsenting the ical file, jsut sent to the browser as string. 
+            callback(null,cal.toString())         
+       }
+    })
+
+};

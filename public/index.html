@@ -1,50 +1,81 @@
 <!DOCTYPE html>
+
+
+
+
 <html>
-<head>
-    <title>Tic-Tac-Twilio - Sync Quickstart</title>
-    <link rel="shortcut icon" href="//www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-  <header>
-    <a href="https://www.twilio.com/docs/api/sync/quickstart-js"
-       target="_blank">
-        Read the getting started guide
-        <i class="fa fa-fw fa-external-link"></i>
-    </a>
-  </header>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sync Demo</title>
+    
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./index.css">
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>x
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/jquery.datetimepicker.css"/ >
+   <script src="/lib/jquery.datetimepicker.full.min.js"></script>
+    <script src="//media.twiliocdn.com/sdk/js/sync/v0.5/twilio-sync.min.js"></script>
+    <script src="https://cdn.rawgit.com/nwcell/ics.js/981e460c/ics.min.js"></script>
 
-  <section>
-    <h1>Tic-Tac-Twilio</h1>
+    <script src="index.js"></script>
+  
 
-    <div id="board">
-        <div class="board-row">
-            <button type="button" data-row="0" data-col="0" disabled>&nbsp;</button>
-            <button type="button" data-row="0" data-col="1" disabled>&nbsp;</button>
-            <button type="button" data-row="0" data-col="2" disabled>&nbsp;</button>
+  </head>
+  <body>
+
+    <div class="container">
+     
+      <h1>Twilio Sync Demo <small>Better than Tic Tac Toe</small></h1>
+      <div class="jumbotron">
+        <h1>Twilio Sync ICal Demo</h1>
+        <h4>This will be an attempt to set up a list for ICal file to be retrieved by a Twilio message (Twilio Fucntion)</h4>
+          <a href="https://www.twilio.com/docs/api/sync/quickstart-js"
+             target="_blank">
+              Read the getting started guide
+              <i class="fa fa-fw fa-external-link"></i>
+          </a>
+        
+        
+      </div>
+      
+      
+      <div class="panel panel-primary">
+        <div id="user" class="panel-heading">Apointment Information</div>
+        <div class="panel-body">
+         
+          <input type="text" class="form-control" id="hourDate" placeholder="Date..."/><br/>
+          <input type="text" class="form-control" id="hourTtl" placeholder="Ttl..."/><br/>
+          <input type="text" class="form-control" id="hourClinc" placeholder="Clinic Friendly Name..."/><br/>
+          <button class="btn btn-primary" id="updateAppt">Set Appointment</button>
+          <button class="btn btn-warning" onclick="sendMessage">Send Message</button>
+          <div class="panel-body" id="getResult2"></div>
         </div>
-        <div class="board-row">
-            <button type="button" data-row="1" data-col="0" disabled>&nbsp;</button>
-            <button type="button" data-row="1" data-col="1" disabled>&nbsp;</button>
-            <button type="button" data-row="1" data-col="2" disabled>&nbsp;</button>
+      </div>
+       <div class="panel panel-primary">
+        <div class="panel-heading">Output.....</div>
+        <div class="panel-body">
+     <a href="https://www.twilio.com/docs/sync/quickstart/js"
+        target="_blank" id="aptLink">
+         GEt the appt
+        
+     </a>
+            <div class="table">
+                <div class="table" id="hoursTable">
+                    
+                </div>
+             </Div> 
+         
+          <div class="panel-body" id="postResult"></div>
         </div>
-        <div class="board-row">
-            <button type="button" data-row="2" data-col="0" disabled>&nbsp;</button>
-            <button type="button" data-row="2" data-col="1" disabled>&nbsp;</button>
-            <button type="button" data-row="2" data-col="2" disabled>&nbsp;</button>
-        </div>
+      </div>
+      <div class="footer">
+       
+      </div>
     </div>
-
-    <div id="message">
-        Welcome! Initializing Sync...
-    </div>
-
-    <p>Open this page in a few tabs to test!</p>
-  </section>
-
-  <script src="//media.twiliocdn.com/sdk/js/sync/v0.5/twilio-sync.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="index.js"></script>
-</body>
+   
+  </body>
 </html>

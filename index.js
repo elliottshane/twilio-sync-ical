@@ -7,6 +7,7 @@ const AccessToken = require('twilio').jwt.AccessToken;
 const SyncGrant = AccessToken.SyncGrant;
 const randomUsername = require('./randos');
 const config = require('./config.js');
+const ical = require('ical-generator')
 
 // Create Express webapp
 var app = express();
@@ -43,6 +44,37 @@ app.get('/token', (request, response) => {
     token: token.toJwt()
   });
 });
+
+app.get('/appt', (request, response) => {
+    
+    var cal = ical();
+    
+    cal.createEvent({
+        start: new Date(),
+        end: new Date(new Date().getTime() + 3600000),
+        summary: 'Example Event',
+        description: 'It works ;)',
+        location: 'my room',
+        url: 'http://sebbo.net/'
+    });
+    cal.serve(response)
+    
+ /* response.send({appt:request.query.appt,
+      location:request.query.loc
+  });*/
+
+    
+    
+});
+var text={"hello.txt":"Hello World!","bye.txt":"Goodbye Cruel World!"};
+app.get('/files',(req,res)=>{
+    
+   //  res.send('yes'
+    //);
+   res.set({"Content-Disposition":"attachment; filename=\"req.params.name\""});
+   res.send(text);
+});
+
 
 // Create http server and run it
 var server = http.createServer(app);
