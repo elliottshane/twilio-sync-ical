@@ -29,9 +29,9 @@ exports.handler = function(context, event, callback) {
             response.appendHeader('Content-Type', 'text/calendar; charset=utf-8');
             response.appendHeader('Content-Disposition', 'attachment; filename="new.ics"');
             response.setBody(cal.toString());
-        //    callback(null, response);
-        //instead of prsenting the ical file, jsut sent to the browser as string. 
-            callback(null,cal.toString())         
+            callback(null, response);
+        //  instead of prsenting the ical file, just send to the browser as string. 
+        //  callback(null,cal.toString())         
        }
     })
 
