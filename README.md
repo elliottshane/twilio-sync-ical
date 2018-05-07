@@ -6,7 +6,14 @@ I have modified the defauly Sync App to demonstrate the use of Lists for appoint
 this demo creates a record and shares the URL for that ical file.  the idea is you would then send a message to the patients phone with the url to the function that presents the ical file. 
 
 The twilio finction is included here in the copy-to-function file
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+after you have created the function and included the required NPM module (ical-generator)
+you need to edit the /public/index.js file and include the url to the function:
+
+//example: https://servername.twil.io/ical?id=
+  var furl = ''
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\
+
 This application should give you a ready-made starting point for writing your
 own real-time apps with Sync. Before we begin, we need to collect
 all the config values we need to run the application:
