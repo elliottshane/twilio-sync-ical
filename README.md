@@ -1,7 +1,7 @@
 # Sync Quickstart for Node.js
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\
-EDIT=
-I have modified the defauly Sync App to demonstrate the use of Lists for appointment reminder ical attachments.  We have a twilio app that sends appointment reminders to pts and we would like to also share an ical file so they can add to their calendars. 
+<EDIT>
+I have modified the default Sync App to demonstrate the use of Lists for appointment reminder ical attachments.  We have a twilio app that sends appointment reminders to pts and we would like to also share an ical file so they can add to their calendars. 
 
 this demo creates a record and shares the URL for that ical file.  the idea is you would then send a message to the patients phone with the url to the function that presents the ical file. 
 
