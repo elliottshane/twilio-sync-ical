@@ -11,7 +11,10 @@ after you have created the function and included the required NPM module (ical-g
 you need to edit the /public/index.js file and include the url to the function:
 
 //example: https://servername.twil.io/ical?id=
-  var furl = ''
+
+var furl = ''<-add your function url here. 
+
+
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\
 
 This application should give you a ready-made starting point for writing your
