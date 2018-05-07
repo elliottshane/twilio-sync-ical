@@ -10,6 +10,10 @@ function updateHours(){
 }
 
 $(function () {
+ 
+ //add the url for the function here. 
+ //example: https://servername.twil.io/ical?id=
+  var furl = ''
    $('a#aptLink').hide();
   //We'll use message to tell the user what's happening
  //messages  here
@@ -82,7 +86,7 @@ $(function () {
    //update the list
    syncList.push(appt,ttl)
    $('#hoursTable').html(JSON.stringify(appt, null, "\t"));
-   $('a#aptLink').attr('href','https://patriarch-llama-6048.twil.io/ical?id='+url);
+   $('a#aptLink').attr('href',furl + url);
    $('a#aptLink').show();
   
   });
@@ -121,7 +125,7 @@ function updateTable(data){
      //add url
  
      tdata.forEach(function(el) {
-         el.appt='<a href=https://patriarch-llama-6048.twil.io/ical?id='+el.appt+'>'+el.appt+'</a>'
+         el.appt='<a href='+ furl + el.appt+'>'+el.appt+'</a>'
      });
  
      // EXTRACT VALUE FOR HTML HEADER. 

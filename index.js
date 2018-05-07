@@ -19,6 +19,7 @@ username for the client requesting a token, and takes a device ID as a query
 parameter.
 */
 app.get('/token', (request, response) => {
+
   let appName = 'TwilioSyncDemo';
   let identity = randomUsername();
 
@@ -59,21 +60,8 @@ app.get('/appt', (request, response) => {
     });
     cal.serve(response)
     
- /* response.send({appt:request.query.appt,
-      location:request.query.loc
-  });*/
+});
 
-    
-    
-});
-var text={"hello.txt":"Hello World!","bye.txt":"Goodbye Cruel World!"};
-app.get('/files',(req,res)=>{
-    
-   //  res.send('yes'
-    //);
-   res.set({"Content-Disposition":"attachment; filename=\"req.params.name\""});
-   res.send(text);
-});
 
 
 // Create http server and run it
