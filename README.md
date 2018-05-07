@@ -5,7 +5,7 @@ I have modified the default Sync App to demonstrate the use of Lists for appoint
 
 this demo creates a record and shares the URL for that ical file.  the idea is you would then send a message to the patients phone with the url to the function that presents the ical file. 
 
-The twilio function is included  in the copy-to-function file.  Create a blank twilio function and copy the ontents to the function.
+The twilio function is included  in the copy-to-function file.  Create a blank twilio function and copy the contents to the function.
 
 after you have created the function and included the required NPM module (ical-generator)
 you need to edit the /public/index.js file and include the url to the function:
