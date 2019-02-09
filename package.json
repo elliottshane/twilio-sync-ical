@@ -22,11 +22,11 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^1.2.0",
-    "express": "^4.13.3",
+    "express": "^4.16.4",
     "ical-generator": "^0.2.10",
     "jquery-datetimepicker": "^2.5.20",
-    "twilio": "^3.0.0-rc.13",
+    "twilio": "^3.28.0",
     "twilio-sync": "^0.7.5",
-    "underscore": "^1.8.3"
+    "underscore": "^1.9.1"
   }
 }
